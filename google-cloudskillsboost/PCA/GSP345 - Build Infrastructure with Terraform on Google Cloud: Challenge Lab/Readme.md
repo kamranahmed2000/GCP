@@ -443,3 +443,27 @@ terraform init
 terraform apply
 
 ```
+***Connectivity test (Optional)***:
+After you have created a firewall rule to allow internal connections over the VPC, you can optionally run a network connectivity test.
+
+Make sure both of your VMs are running.
+
+Navigate to Network Intelligence > Connectivity Tests. Run a connectivity test on the two VMs to verify that they are reachable. You have now validated the connectivity between the instances!
+
+Note: Ensure that the Network Management API is successfully enabled, if it is not, click Enable.
+Your configuration settings should resemble the following:
+
+Test name: terraform-network-check
+protoco: tcp
+
+**Source:**
+Source endpoint: VM instance
+Source VM Instance: tf-instance-1
+
+**Destination**
+Destination endpoint: VM instance
+Destination VM Instance: tf-instance-2
+
+Destination Port: 80
+
+Click **CREATE** to test.
